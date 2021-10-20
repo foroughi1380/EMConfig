@@ -1,4 +1,5 @@
 <?php
+namespace Gelim\EMConfig;
 
 use Illuminate\Support\ServiceProvider;
 
