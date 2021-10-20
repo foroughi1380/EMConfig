@@ -1,0 +1,39 @@
+{
+    "name": "gelim/emconfig",
+    "description": "An eloquent key value configuration library for laravel project",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/foroughi1380/EMConfig",
+    "keywords": [
+        "laravel",
+        "config",
+        "eloquent",
+        "laravel config library",
+        "laravel config package",
+        "configuration library",
+        "configuration",
+        "system configuration"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gelim\\Emconfig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Foroughi",
+            "email": "foroughi1380@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra" : {
+        "laravel": {
+            "providers" : [
+                "Gelim\\Emconfig\\Providers\\ConfigServiceProdiver"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}
