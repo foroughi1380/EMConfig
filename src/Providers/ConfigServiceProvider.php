@@ -8,7 +8,7 @@ class ConfigServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
+        $this->loadMigrationsFrom("Database/Migrations");
     }
 
     public function register()
