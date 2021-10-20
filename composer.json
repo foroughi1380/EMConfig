@@ -29,7 +29,7 @@
     "extra" : {
         "laravel": {
             "providers" : [
-                "Gelim\\EMConfig\\Providers\\ConfigServiceProdiver"
+                "Gelim\\EMConfig\\Providers\\ConfigServiceProvider"
             ],
             "aliases": {
 
