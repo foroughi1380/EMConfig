@@ -8,7 +8,7 @@ class ConfigServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        dd("worked");
+
     }
 
     public function register()
