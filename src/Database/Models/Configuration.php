@@ -1,5 +1,6 @@
 <?php
 namespace Gelim\EMConfig\Database\Models;
+use Gelim\EMConfig\Casts\SerialCast;
 use Illuminate\Database\Eloquent\Model;
 
 class Configuration extends Model
@@ -15,16 +16,32 @@ class Configuration extends Model
     ];
 
     protected $casts = [
-        "extras" => "array"
+        "extras" => ""
     ];
 
-    protected function getCastType($key)
+    /**
+     * @return string[]
+     */
+    public function getCasts(): array
     {
-        if ($key === "extras"){
-            return $this->type;
+        $casts = parent::getCasts();
+
+        if (empty($this->type)) return $casts;
+
+        switch ($this->type) {
+            case "array":
+            case "any":
+                $extraCast = SerialCast::class;
+                break;
+
+            default:
+                $extraCast = $this->type;
         }
-        return parent::getCastType($key);
+
+        $casts['extras'] = $extraCast??$casts['extras'];
+        return $casts;
     }
+
 
     public function scopeScope($query, $scope)
     {
