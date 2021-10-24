@@ -4,14 +4,33 @@ namespace Gelim\EMConfig\Database\Repository;
 
 use Gelim\EMConfig\Database\Models\Configuration;
 use Gelim\EMConfig\Database\Repository\IConfigRepository;
+use Illuminate\Support\Facades\DB;
+use League\Flysystem\Config;
 
 class EloquentConfigRepository implements IConfigRepository
 {
-
+    public function review($values)
+    {
+        foreach ($values as $value){
+            $count = Configuration::query()
+                ->where("scope" , $value['scope'])
+                ->where("key" , $value['key'])
+                ->count();
+            if ($count == 0){
+                (new Configuration($value))->save();
+            }
+        }
+    }
 
     public function init($values)
     {
-        Configuration::upsert($values , ['key'] , ['extras', 'type', 'title', 'description']);
+        Configuration::query()->delete();
+
+        foreach ($values as $value){
+            (new Configuration($value))->save();
+        }
+
+//        Configuration::upsert($values , ['key'] , ['extras', 'type', 'title', 'description']);
     }
 
     public function get($scope, $key, $default = null)

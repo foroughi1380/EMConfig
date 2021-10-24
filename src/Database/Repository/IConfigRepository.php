@@ -14,4 +14,6 @@ interface IConfigRepository
     public function factoryReset($values);
 
     public function init($values);
+
+    public function review($values);
 }
