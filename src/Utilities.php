@@ -2,9 +2,12 @@
 
 namespace Gelim\EMConfig;
 
-function getDefaultConfigRow()
+function getDefaultConfigRow($scope = null)
 {
     $configs = config("configSet");
+    if ($scope){
+        $configs=[$scope => $configs[$scope]];
+    }
     $ret = [];
 
 
