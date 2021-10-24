@@ -1,6 +1,7 @@
 <?php
 namespace Gelim\EMConfig\Providers;
 
+use Gelim\EMConfig\Commands\InitCommand;
 use Gelim\EMConfig\Database\Repository\EloquentConfigRepository;
 use Gelim\EMConfig\Database\Repository\IConfigRepository;
 use Gelim\EMConfig\EMConfig;
@@ -14,6 +15,9 @@ class ConfigServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . "/../Configs/configSet.php" => config_path("configSet.php")
         ],"emconfig");
+        $this->commands([
+            InitCommand::class
+        ]);
     }
 
     public function register()
