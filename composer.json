@@ -32,7 +32,7 @@
                 "Gelim\\EMConfig\\Providers\\ConfigServiceProvider"
             ],
             "aliases": {
-
+                "EMConfig": "Gelim\\EMConfig\\Facades\\EMConfig"
             }
         }
     }
