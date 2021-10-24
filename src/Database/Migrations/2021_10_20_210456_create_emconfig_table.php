@@ -20,7 +20,7 @@ class CreateEmconfigTable extends Migration
             $table->string('description')->nullable();
             $table->string("title")->nullable();
             $table->string("type");
-            $table->longText('extras')->default("");
+            $table->string('extras')->default("");
             $table->timestamps();
         });
     }
