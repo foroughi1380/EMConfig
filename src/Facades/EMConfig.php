@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void resetValue($scope=null)
  * @method static \Gelim\EMConfig\EMConfig scope($scope)
  * @method static array scopes()
- * @method static array scopesKeysRaw($scope)
+ * @method static array scopesKeysRaw($scope=null)
  * @method static array keys($scope=null)
  * @method static bool set($key, $value, $scope=null)
  * @method static mixed get($key, $default=null,$scope=null)
