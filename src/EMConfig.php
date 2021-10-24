@@ -7,10 +7,11 @@ class EMConfig
 {
     /** @var IConfigRepository */
     private $configRepo;
-
-    public function __construct()
+    private $scope;
+    public function __construct($repo=null,$scope="default")
     {
-        $this->configRepo = resolve(IConfigRepository::class);
+        $this->scope = $scope;
+        $this->configRepo = $repo??resolve(IConfigRepository::class);
     }
 
     public function init()
@@ -30,5 +31,13 @@ class EMConfig
     public function get($key, $default, $scope="default")
     {
 
+    }
+
+    /**
+     * @param string $scope
+     * @return EMConfig
+     */
+    public function scope($scope){
+        return new EMConfig($this->configRepo,$scope);
     }
 }
