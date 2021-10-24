@@ -40,7 +40,7 @@ class EMConfig
         $this->configRepo->getRow($scope,$key,null);
     }
 
-    public function set($scope, $key, $value)
+    public function set($key, $value, $scope=null)
     {
         return $this->configRepo->set($key,$value,$scope);
     }
