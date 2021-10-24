@@ -13,6 +13,14 @@ class EMConfig
         $repo->init($rows);
     }
 
+    public function review()
+    {
+        /** @var IConfigRepository $repo */
+        $repo = resolve(IConfigRepository::class);
+        $rows = getDefaultConfigRow();
+        $repo->review($rows);
+    }
+
     public function get($key, $default, $scope="default")
     {
 
