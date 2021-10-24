@@ -11,9 +11,9 @@ interface IConfigRepository
 
     public function keys($scope=null);
 
-    public function factoryReset($values);
-
     public function init($values);
 
     public function review($values);
+
+    public function resetValue($values);
 }

@@ -48,8 +48,4 @@ class EloquentConfigRepository implements IConfigRepository
     public function keys($scope = null)
     {
     }
-
-    public function factoryReset($values)
-    {
-    }
 }
