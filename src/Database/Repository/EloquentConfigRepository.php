@@ -16,9 +16,12 @@ class EloquentConfigRepository implements IConfigRepository
             $config = Configuration::query()
                 ->where("scope" , $value['scope'])
                 ->where("key" , $value['key'])
-                ->firstOrCreate();
-            $config->extras = $value['extras'];
-            $config->save();
+                ->first();
+
+            if ($config){
+                $config->extras = $value['extras'];
+                $config->save();
+            }
         }
     }
 
