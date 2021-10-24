@@ -25,7 +25,9 @@ class EMConfig
         $this->configRepo->review(getDefaultConfigRow());
     }
 
-    public function resetValue($scope=null){
+    public function resetValue($scope=null,$resetAll=false){
+        $scope = $scope??$this->scope;
+        if ($resetAll) $scope = null;
         $this->configRepo->resetValue(getDefaultConfigRow($scope));
     }
 
@@ -45,7 +47,8 @@ class EMConfig
         return $this->configRepo->set($key,$value,$scope);
     }
 
-    public function keys($scope){
+    public function keys($scope=null){
+        $scope = $scope??$this->scope;
         return $this->configRepo->keys($scope);
     }
 
@@ -54,8 +57,9 @@ class EMConfig
         return $this->configRepo->scopes();
     }
 
-    public function scopesKeysRaw($scope)
+    public function scopesKeysRaw($scope=null)
     {
+        $scope = $scope??$this->scope;
         return $this->configRepo->scopesKeysRaw($scope);
     }
 
