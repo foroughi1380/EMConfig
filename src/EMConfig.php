@@ -5,20 +5,26 @@ use Gelim\EMConfig\Database\Repository\IConfigRepository;
 require_once ("Utilities.php");
 class EMConfig
 {
+    /** @var IConfigRepository */
+    private $configRepo;
+
+    public function __construct()
+    {
+        $this->configRepo = resolve(IConfigRepository::class);
+    }
+
     public function init()
     {
-        /** @var IConfigRepository $repo */
-        $repo = resolve(IConfigRepository::class);
-        $rows = getDefaultConfigRow();
-        $repo->init($rows);
+        $this->configRepo->init(getDefaultConfigRow());
     }
 
     public function review()
     {
-        /** @var IConfigRepository $repo */
-        $repo = resolve(IConfigRepository::class);
-        $rows = getDefaultConfigRow();
-        $repo->review($rows);
+        $this->configRepo->review(getDefaultConfigRow());
+    }
+
+    public function resetValue(){
+        $this->configRepo->resetValue(getDefaultConfigRow());
     }
 
     public function get($key, $default, $scope="default")
