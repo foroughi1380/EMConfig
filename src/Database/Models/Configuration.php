@@ -25,4 +25,9 @@ class Configuration extends Model
         }
         return parent::getCastType($key);
     }
+
+    public function scopeScope($query, $scope)
+    {
+        return $query->where("scope" , $scope);
+    }
 }
