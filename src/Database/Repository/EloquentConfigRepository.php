@@ -3,7 +3,6 @@
 namespace Gelim\EMConfig\Database\Repository;
 
 use Gelim\EMConfig\Database\Models\Configuration;
-use Gelim\EMConfig\Database\Repository\IConfigRepository;
 use Illuminate\Support\Facades\DB;
 use League\Flysystem\Config;
 
@@ -51,19 +50,53 @@ class EloquentConfigRepository implements IConfigRepository
 
     public function get($scope, $key, $default = null)
     {
+        $config = $this->getRow($scope,$key);
+
+        return $config? $config->extras : $default;
     }
 
-    public function set($key, $value, $scope, $type = null)
+    public function getRow($scope, $key, $default = null)
     {
+        $config = Configuration::query()->where("scope", $scope)
+            ->where("key", $key)
+            ->first();
+
+        return $config??$default;
     }
 
-    public function scope($scope)
+    public function set($key, $value, $scope)
     {
+        $config = Configuration::query()->where("scope", $scope)
+            ->where("key", $key)
+            ->first();
+
+        if ($config){
+            $config->extras = $value;
+            return $config->save();
+        }
+
+        return false;
     }
 
     public function keys($scope = null)
     {
+        $query = DB::table("emconfig")->distinct();
+
+        if ($scope){
+            $query = $query->select(["key"])
+                ->where("scope" , $scope);
+        }else{
+            $query = $query->select(["scope", "key"]);
+        }
+        return $query->get();
     }
 
+    public function scopesKeysRaw($scope){
+        return Configuration::query()->where("scope", $scope)->get();
+    }
 
+    public function scopes()
+    {
+        return DB::table("emconfig")->distinct()->select(["scope"])->get();
+    }
 }

@@ -5,9 +5,13 @@ interface IConfigRepository
 {
     public function get($scope, $key, $default=null);
 
-    public function set($key, $value, $scope, $type=null);
+    public function getRow($scope, $key, $default = null);
 
-    public function scope($scope);
+    public function set($key, $value, $scope);
+
+    public function scopes();
+
+    public function scopesKeysRaw($scope);
 
     public function keys($scope=null);
 
