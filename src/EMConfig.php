@@ -23,8 +23,8 @@ class EMConfig
         $this->configRepo->review(getDefaultConfigRow());
     }
 
-    public function resetValue(){
-        $this->configRepo->resetValue(getDefaultConfigRow());
+    public function resetValue($scope=null){
+        $this->configRepo->resetValue(getDefaultConfigRow($scope));
     }
 
     public function get($key, $default, $scope="default")
