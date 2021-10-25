@@ -34,12 +34,12 @@ class EMConfig
     public function get($key, $default=null, $scope=null)
     {
         $scope = $scope??$this->scope;
-        $this->configRepo->get($scope,$key,$default);
+        return $this->configRepo->get($scope,$key,$default);
     }
     public function getRaw($key, $scope=null)
     {
         $scope = $scope??$this->scope;
-        $this->configRepo->getRow($scope,$key,null);
+        return $this->configRepo->getRow($scope,$key,null);
     }
 
     public function set($key, $value, $scope=null)
