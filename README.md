@@ -7,3 +7,6 @@ An eloquent key value configuration for laravel projects
 ```shell
 $ composer require gelim/emconfig
 ```
+## how to use
+comming son
+
