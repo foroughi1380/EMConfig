@@ -2,11 +2,11 @@
 namespace Gelim\EMConfig\Providers;
 
 use Gelim\EMConfig\Commands\InitCommand;
+use Gelim\EMConfig\Commands\ResetValueCommand;
 use Gelim\EMConfig\Commands\ReviewCommand;
 use Gelim\EMConfig\Database\Repository\EloquentConfigRepository;
 use Gelim\EMConfig\Database\Repository\IConfigRepository;
 use Gelim\EMConfig\EMConfig;
-use Illuminate\Database\Console\Migrations\ResetCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConfigServiceProvider extends ServiceProvider
@@ -17,11 +17,11 @@ class ConfigServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . "/../Configs/configSet.php" => config_path("configSet.php")
         ],"emconfig");
-//        $this->commands([
-//            InitCommand::class,
-//            ReviewCommand::class,
-//            ResetCommand::class
-//        ]);
+        $this->commands([
+            InitCommand::class,
+            ReviewCommand::class,
+            ResetValueCommand::class
+        ]);
     }
 
     public function register()
