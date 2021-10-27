@@ -9,6 +9,12 @@ An eloquent key value configuration for laravel projects
 ```shell
 $ composer require gelim/emconfig
 ```
+then publish configSet.php file
+```shell
+$ php artisan vendor:public --tag=emconfig
+```
+> this file conrain all configuration has in your site (in config folder)
+
 ## how to use
 comming son
 
