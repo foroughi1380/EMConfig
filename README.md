@@ -1,6 +1,6 @@
 # EMConfig
 <a href="https://github.com/foroughi1380/EMConfig/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/foroughi1380/EMConfig"></a>
-<img alt="Packagist Version" src="https://img.shields.io/packagist/v/gelim/emconfig">
+<a href="https://packagist.org/packages/gelim/emconfig"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/gelim/emconfig"></a>
 
 
 An eloquent key value configuration for laravel projects
