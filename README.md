@@ -11,7 +11,7 @@ $ composer require gelim/emconfig
 ```
 then publish configSet.php file
 ```shell
-$ php artisan vendor:public --tag=emconfig
+$ php artisan vendor:publish --tag=emconfig
 ```
 > this file conrain all configuration has in your site (in config folder)
 
