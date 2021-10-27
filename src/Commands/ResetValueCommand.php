@@ -12,7 +12,7 @@ class ResetValueCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'emconfig:resetValue {scope?}';
+    protected $signature = 'emconfig:resetValue {scope?} {--a|all : reset all scopes}';
 
     /**
      * The console command description.
@@ -38,7 +38,7 @@ class ResetValueCommand extends Command
      */
     public function handle()
     {
-        EMConfig::resetValue($this->getArguments()['scope']??null);
+        EMConfig::resetValue($this->argument("scope"), $this->option("all"));
         return Command::SUCCESS;
     }
 }
