@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static void init()
  * @method static void review()
- * @method static void resetValue($scope=null)
+ * @method static void resetValue($scope=null, $all=false)
  * @method static \Gelim\EMConfig\EMConfig scope($scope)
  * @method static array scopes()
  * @method static array scopesKeysRaw($scope=null)
