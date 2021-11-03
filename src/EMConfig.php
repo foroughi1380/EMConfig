@@ -70,4 +70,9 @@ class EMConfig
     public function scope($scope){
         return new EMConfig($this->configRepo,$scope);
     }
+
+    public function getAll()
+    {
+        return $this->configRepo->all();
+    }
 }

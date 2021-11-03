@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array scopes()
  * @method static array scopesKeysRaw($scope=null)
  * @method static array keys($scope=null)
+ * @method static array all()
  * @method static bool set($key, $value, $scope=null)
  * @method static mixed get($key, $default=null,$scope=null)
  * @method static Configuration|null getRow($key, $scope=null)

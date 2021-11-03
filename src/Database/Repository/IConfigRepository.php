@@ -11,6 +11,8 @@ interface IConfigRepository
 
     public function scopes();
 
+    public function all();
+
     public function scopesKeysRaw($scope);
 
     public function keys($scope=null);

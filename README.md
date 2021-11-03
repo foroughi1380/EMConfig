@@ -1,6 +1,6 @@
 # EMConfig
 <a href="https://github.com/foroughi1380/EMConfig/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/foroughi1380/EMConfig"></a>
-<a href="https://packagist.org/packages/gelim/emconfig"><img alt="Packagist Version" src="https://img.shields.io/packagist/v/gelim/emconfig"></a>
+<img alt="Packagist Version" src="https://img.shields.io/packagist/v/gelim/emconfig">
 
 
 An eloquent key value configuration for laravel projects
@@ -9,12 +9,6 @@ An eloquent key value configuration for laravel projects
 ```shell
 $ composer require gelim/emconfig
 ```
-then publish configSet.php file
-```shell
-$ php artisan vendor:publish --tag=emconfig
-```
-> this file conrain all configuration has in your site (in config folder)
-
 ## how to use
 comming son
 

@@ -99,4 +99,9 @@ class EloquentConfigRepository implements IConfigRepository
     {
         return DB::table("emconfig")->distinct()->select(["scope"])->get();
     }
+
+    public function all()
+    {
+        return Configuration::all();
+    }
 }
