@@ -28,12 +28,14 @@ class Configuration extends Model
 
         if (empty($this->type)) return $casts;
 
-        switch ($this->type) {
+        switch (strtolower($this->type)) {
             case "array":
             case "any":
                 $extraCast = SerialCast::class;
                 break;
-
+            case "multiline":
+                $extraCast = "string";
+                break;
             default:
                 $extraCast = $this->type;
         }
