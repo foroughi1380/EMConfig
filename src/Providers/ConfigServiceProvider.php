@@ -16,7 +16,7 @@ class ConfigServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
         $this->publishes([
             __DIR__ . "/../Configs/configSet.php" => config_path("configSet.php")
-        ],"emconfig");
+        ],["emconfig", "laravel-assets"]);
         $this->commands([
             InitCommand::class,
             ReviewCommand::class,
