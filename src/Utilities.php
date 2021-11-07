@@ -3,7 +3,7 @@
 namespace Gelim\EMConfig;
 
 class Utilities{
-    function getDefaultConfigRow($scope = null)
+    public static function getDefaultConfigRow($scope = null)
     {
         $configs = config("configSet");
         if ($scope){
@@ -14,13 +14,18 @@ class Utilities{
 
         foreach ($configs as $scope => $keys) {
             foreach ($keys as $key => $value) {
+                if (! is_array($value)){
+                    $value = [
+                        "value" => $value
+                    ];
+                }
                 $ret[] = [
                     "scope" => $scope,
                     "key" => $key,
-                    "type" => $value['type'],
+                    "type" => $value['type']??self::getValueType($value['value']),
                     "extras" => $value['value'],
-                    "title" => $value['title'],
-                    "description" => $value['description'],
+                    "title" => $value['title']??"",
+                    "description" => $value['description']??"",
                 ];
             }
         }
