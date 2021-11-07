@@ -11,6 +11,7 @@ class EMConfig
     private $scope;
     public function __construct($repo=null,$scope="default")
     {
+        //defines scope
         $this->scope = $scope;
         $this->configRepo = $repo??resolve(IConfigRepository::class);
     }
