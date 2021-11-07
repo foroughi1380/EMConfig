@@ -17,18 +17,18 @@ class EMConfig
 
     public function init()
     {
-        $this->configRepo->init(getDefaultConfigRow());
+        $this->configRepo->init(Utilities::getDefaultConfigRow());
     }
 
     public function review()
     {
-        $this->configRepo->review(getDefaultConfigRow());
+        $this->configRepo->review(Utilities::getDefaultConfigRow());
     }
 
     public function resetValue($scope=null,$resetAll=false){
         $scope = $scope??$this->scope;
         if ($resetAll) $scope = null;
-        $this->configRepo->resetValue(getDefaultConfigRow($scope));
+        $this->configRepo->resetValue(Utilities::getDefaultConfigRow($scope));
     }
 
     public function get($key, $default=null, $scope=null)
