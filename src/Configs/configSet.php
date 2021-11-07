@@ -17,7 +17,7 @@ return [
     /**
      * [scope name] : [
      *          [key] : [
-     *                      "type"  : [array, integer, float, string, boolean, date, datetime, object],
+     *                      "type"  : [array, integer, float, string, boolean, date, datetime, object,multiline, any],
      *                      "value" :  ""
      *                  ]
      * ]
