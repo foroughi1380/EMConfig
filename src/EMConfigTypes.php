@@ -7,6 +7,7 @@ class EMConfigTypes
     const ARRAY_TYPE = "array";
     const INTEGER_TYPE = "integer";
     const FLOAT_TYPE = "float";
+    const DOUBLE_TYPE = "double";
     const STRING_TYPE = "string";
     const BOOLEAN_TYPE = "boolean";
     const DATE_TYPE = "date";
@@ -22,6 +23,7 @@ class EMConfigTypes
             self::ARRAY_TYPE,
             self::INTEGER_TYPE,
             self::FLOAT_TYPE,
+            self::DOUBLE_TYPE,
             self::STRING_TYPE,
             self::BOOLEAN_TYPE,
             self::DATE_TYPE,
