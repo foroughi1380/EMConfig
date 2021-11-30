@@ -5,7 +5,7 @@ namespace Gelim\EMConfig;
 class Utilities{
     public static function getDefaultConfigRow($scope = null)
     {
-        $configs = config("configSet");
+        $configs = config(EMConfig::CONFIG_FILE_NAME);
         if ($scope){
             $configs=[$scope => $configs[$scope]];
         }
