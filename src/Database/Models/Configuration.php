@@ -12,7 +12,8 @@ class Configuration extends Model
         'title',
         'description',
         'type',
-        'extras'
+        'extras',
+        'parent_id'
     ];
 
     protected $casts = [
