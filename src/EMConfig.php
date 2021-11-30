@@ -6,6 +6,7 @@ use Gelim\EMConfig\Database\Repository\IConfigRepository;
 require_once ("Utilities.php");
 class EMConfig
 {
+    public const CONFIG_FILE_NAME = "configSet";
     /** @var IConfigRepository */
     private $configRepo;
     private $scope;
