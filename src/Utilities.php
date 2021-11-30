@@ -57,7 +57,7 @@ class Utilities{
 
     static function isDate($value)
     {
-        if (!$value) {
+        if (!$value || strlen($value) === 1) {
             return false;
         }
 
