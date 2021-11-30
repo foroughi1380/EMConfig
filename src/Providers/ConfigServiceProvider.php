@@ -2,6 +2,7 @@
 namespace Gelim\EMConfig\Providers;
 
 use Gelim\EMConfig\Commands\AddCommand;
+use Gelim\EMConfig\Commands\GetCommand;
 use Gelim\EMConfig\Commands\InitCommand;
 use Gelim\EMConfig\Commands\ResetValueCommand;
 use Gelim\EMConfig\Commands\ReviewCommand;
@@ -23,7 +24,8 @@ class ConfigServiceProvider extends ServiceProvider
             InitCommand::class,
             ReviewCommand::class,
             ResetValueCommand::class,
-            AddCommand::class
+            AddCommand::class,
+            GetCommand::class
         ]);
     }
 
