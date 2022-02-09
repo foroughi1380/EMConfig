@@ -3,7 +3,7 @@ namespace Gelim\EMConfig\Database\Models;
 use Gelim\EMConfig\Casts\SerialCast;
 use Illuminate\Database\Eloquent\Model;
 
-class Configuration extends Model
+class Config extends Model
 {
     protected $table = "emconfig";
     protected $fillable = [
