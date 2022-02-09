@@ -1,25 +1,37 @@
 <?php
 
 return [
-    /** default scope use it without set scope name */
-    "default" => [
-        "name" => [
-            "title" => "the title",
-            "description" => "the description",
-            "type"  => "array",
-            "value" => [
-                "ali",
-                "reza",
+
+    "maintenance" => [
+        'type' => "boolean",
+        "value" => false,
+    ],
+
+    "sms"=>[
+        "value" => true,
+        "childes"=>[
+            "number" => [
+                "type" => "string",
+                "value" => "0313252",
+            ],
+            "welcomeText" => [
+                "type" => 'string',
+                "value" => "Welcome to our site"
             ]
         ]
     ],
 
-    /**
-     * [scope name] : [
-     *          [key] : [
-     *                      "type"  : [array, integer, float, string, boolean, date, datetime, object,multiline, any],
-     *                      "value" :  ""
-     *                  ]
-     * ]
-     */
+
+    "account" => [
+        "childes" => [
+            "usename" => [
+                "type" => "string"
+            ],
+            "description" => [
+                "type" => "multiline"
+            ],
+        ]
+    ]
+
+
 ];
