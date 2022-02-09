@@ -17,7 +17,7 @@ class CreateEmconfigTable extends Migration
             $table->id();
             $table->string('scope')->index();
             $table->string('key')->index();
-            $table->string('value')->nullable();
+            $table->text('value')->nullable();
             $table->string("type")->nullable();
             $table->text('extras');
             $table->timestamps();
