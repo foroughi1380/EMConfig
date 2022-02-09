@@ -2,7 +2,7 @@
 
 namespace Gelim\EMConfig\Database\Repository;
 
-use Gelim\EMConfig\Database\Models\Configuration;
+use Gelim\EMConfig\Database\Models\Config as Configuration;
 use Illuminate\Support\Facades\DB;
 use League\Flysystem\Config;
 
