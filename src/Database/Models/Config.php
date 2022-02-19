@@ -15,7 +15,8 @@ class Config extends Model
     ];
 
     protected $casts = [
-        "value" => ""
+        "value" => "string",
+        "extras"=> "array"
     ];
 
     /**

@@ -42,10 +42,11 @@ class EloquentConfigRepository implements IConfigRepository
         Configuration::query()->delete();
 
         foreach ($values as $value){
-            (new Configuration($value))->save();
+            $config = new Configuration();
+            $config->fill($value);
+            $config->save();
         }
 
-//        Configuration::upsert($values , ['key'] , ['extras', 'type', 'title', 'description']);
     }
 
     public function get($scope, $key, $default = null)

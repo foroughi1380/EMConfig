@@ -10,6 +10,7 @@ use Gelim\EMConfig\Database\Repository\EloquentConfigRepository;
 use Gelim\EMConfig\Database\Repository\IConfigRepository;
 use Gelim\EMConfig\EMConfig;
 use Gelim\EMConfig\EMConfigSetManager;
+use Gelim\EMConfig\Services\ConfigSetService;
 use Gelim\EMConfig\Services\EMConfigService;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,12 +33,16 @@ class ConfigServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->app->singleton(IConfigRepository::class , function (){
+            return new EloquentConfigRepository();
+        });
+
         $this->app->singleton("emconfing-config" , function (){
             return new EMConfigService();
         });
 
-        $this->app->singleton(IConfigRepository::class , function (){
-            return new EloquentConfigRepository();
+        $this->app->singleton(ConfigSetService::class, function(){
+            return new ConfigSetService();
         });
     }
 }
