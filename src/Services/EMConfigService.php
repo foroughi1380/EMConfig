@@ -10,4 +10,12 @@ class EMConfigService
     {
         resolve(IConfigRepository::class)->init(resolve(ConfigSetService::class)->getDefaultConfigs());
     }
+
+
+    public function get($scope,$key, $default=null)
+    {
+        $repository = resolve(IConfigRepository::class);
+
+        return $repository->get($scope, $key, $default);
+    }
 }

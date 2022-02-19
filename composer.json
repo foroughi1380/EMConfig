@@ -15,6 +15,7 @@
         "system configuration"
     ],
     "autoload": {
+        "files": ["src/functions.php"],
         "psr-4": {
             "Gelim\\EMConfig\\": "src/"
         }
