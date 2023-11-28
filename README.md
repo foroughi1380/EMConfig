@@ -9,6 +9,15 @@ An eloquent key value configuration for laravel projects
 ```shell
 $ composer require gelim/emconfig
 ```
+
+```shell
+$ php artisan vendor:publish --tag=emconfig
+```
+
+```shell
+$ php artisan migrate
+```
+
 ## how to use
 comming son
 
